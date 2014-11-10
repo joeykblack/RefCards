@@ -1,9 +1,157 @@
-\documentclass[11pt]{article}
-\usepackage{amsmath}
+\documentclass[9pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[cm]{fullpage}
+\usepackage{multicol}
+\usepackage{comment}
+\usepackage{parskip}
+
 \title{Stats Cheet Sheet}
 \date{}
 \pagenumbering{gobble}
-\usepackage[cm]{fullpage}
+
+\setlength{\columnseprule}{0.5pt}
+
 \begin{document}
-test
+
+\begin{multicols}{2}[
+	\begin{center}
+		Stats Cheet Sheet \footnote{Source: https://www.udacity.com/wiki/st101/stats-cheat-sheet}
+	\end{center}]
+
+	\textbf{Empirical Mean}
+	
+	$\mu =\frac{1}{N}\cdot \sum _{i=1}^N\quad X_i$
+	
+	Properties (for independent random variables $X$ and $Y$):
+	\begin{enumerate}
+	    \item $Mean(X+Y)=Mean(X)+Mean(Y)$
+	   \item  $Mean(X\times Y)=Mean(X)\times Mean(Y)$
+	\end{enumerate}
+	
+	
+	\textbf{Variance}
+	
+	$\sigma^2=Var(X)$
+	
+	$\sigma^2=\frac{1}{N}\sum_{i=1}^N\quad(x_i-\mu)^2$
+	
+	
+	\textbf{Standard Deviation}
+	
+	$\sigma=\sqrt{Var(X)}$
+	
+	Properties (for independent random variables $X$ and $Y$):
+	
+	$Cov(X,Y)=\frac{1}{N}\sum\quad[(X-\overline{X})\times(Y-\overline{Y})]$
+	
+	$Var(X+Y)=Var(X)+Var(Y)+2\times Cov(X,Y)$
+	
+	$Var(\alpha X)=\alpha^2Var(X)$
+	
+	Note: $Cov(X,Y)=0$ for independent $X$ and $Y$ variables
+
+
+	\textbf{Bernoulli Distribution}
+
+	Bernoulli distribution (a special case of binomial distribution) is a discrete probability distribution with two possible outcomes such that $X_i=0$ occurs with probability $p$ and $X_i=1$ with probability $q=(1-p)$. An example given in the course is a coin flip.
+	
+	$\mu=p$ $\sigma^2=p(1-p)$
+	
+
+	\textbf{Binomial Coefficient}
+	
+	${{n}\choose{k}}=\frac{n!}{k!(n-k)!}$
+	
+	
+	\textbf{Binomial Probability Distribution}
+	
+	$P(n,k,p)=\frac{n!}{k!(n-k)!}p^k(1-p)^{(n-k)}$
+	
+	
+	\textbf{Standard Normal Distribution}
+	
+	$N(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\cdot\pi\cdot\sigma^2}}\cdot e^{[-\frac{1}{2}\cdot\frac{(x-\mu)^2}{\sigma^2}]}$
+	
+	
+	\textbf{Confidence Interval}
+	
+	$CI=1.96\sqrt{\frac{p(1-p)}{N}}$
+	
+	General Form:
+	
+	Size of CI = $a\sqrt{\frac{\sigma^2}{N}}$
+	
+	$\frac{1}{N}\sum X_i\pm a\sqrt{\frac{\sigma^2}{N}}$
+	
+	Note:
+	\begin{itemize}
+	    \item $a=1.96$ for $N\ge30$
+	    \item $a$ is the t-value computed for $(N-1)$ degrees of freedom and confidence level $p$.
+	\end{itemize}
+
+\columnbreak
+	
+	\textbf{Linear Regression}
+	
+	$y=bx+a$
+	
+	$b=\frac{\sum_{i=1}^n[(x_i-\overline{x})(y_i-\overline{y})]}{\sum_{i=1}^n(x_i-\overline{x})^2}$
+	
+	$a=\overline{y}-b\overline{x}$
+	
+	$r=\frac{\sum_i[(x_i-\overline{x})(y_i-\overline{y}]}{\sqrt{\sum_i(x_i-\overline{x})^2\sum_i(y_i-\overline{y})^2}}$
+	
+	$Z_x=\frac{x_i-\overline{x}}{\sigma_x}$
+	
+	Note: + $r$ is the correlation coefficient.
+	
+	 $Z_x$ is the standard score.
+
+
+	\textbf{Joint Occurrence}
+	
+	$P(B\cdot C\mid A)=P(B\mid A)\times P(C\mid A\cdot B)$
+	
+	Note:
+	
+	$P(A\cdot B\cdot C)=P(B\cdot C\mid A)\times P(A)$
+	
+	$P(A\cdot B\cdot C)=P(C\mid A\cdot B)\times P(A\cdot B)$
+	
+	$P(A\cdot B\cdot C)=P(C\mid A\cdot B)\times P(B\mid A)\times P(A)$
+	
+	$P(B\cdot C\mid A)\times P(A)=P(C\mid A\cdot B)\times P(B\mid A)\times P(A)$
+	
+	$P(B\cdot C\mid A)=P(B\mid A)\times P(C\mid A\cdot B)$
+	
+	
+	\textbf{Independent Joint Probabilities}
+	
+	$P(B\cdot C\mid A)=P(B\mid A)\times P(C\mid A)$
+	
+	
+	\textbf{Total Probability}
+	
+	$P(A)=P(A\mid B)\times P(B)+P(A\mid\neg B)\times P(\neg B)$
+	
+	$P(C\mid A)=P(C\mid A\cdot B)\times P(B\mid A)+P(C\mid A\cdot\neg B)\times P(\neg B\mid A)$
+	
+	
+	\textbf{Bayes' Rule}
+	
+	$P(A\mid B)=\frac{P(B\mid A)\cdot P(A)}{P(B)}$
+	
+	
+	\textbf{Binomial Coefficient}
+	
+	${{n}\choose{k}}=\frac{n!}{k!(n-k)!}$
+	
+	
+	\textbf{Binomial Probability Distribution}
+	
+	$P(n,k,p)=\frac{n!}{k!(n-k)!}p^k(1-p)^{(n-k)}$
+\end{multicols}
+
 \end{document}
