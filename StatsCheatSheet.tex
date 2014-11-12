@@ -7,7 +7,9 @@
 \usepackage{comment}
 \usepackage{parskip}
 
-\title{Stats Cheet Sheet}
+\newcommand{\mytitle}{Stats Cheet Sheet}
+
+\title{\mytitle}
 \date{}
 \pagenumbering{gobble}
 
@@ -17,7 +19,7 @@
 
 \begin{multicols}{2}[
 	\begin{center}
-		Stats Cheet Sheet \footnote{Source: https://www.udacity.com/wiki/st101/stats-cheat-sheet}
+		\mytitle \footnote{Source: https://www.udacity.com/wiki/st101/stats-cheat-sheet}
 	\end{center}]
 
 	\textbf{Empirical Mean}
@@ -143,15 +145,6 @@
 	
 	$P(A\mid B)=\frac{P(B\mid A)\cdot P(A)}{P(B)}$
 	
-	
-	\textbf{Binomial Coefficient}
-	
-	${{n}\choose{k}}=\frac{n!}{k!(n-k)!}$
-	
-	
-	\textbf{Binomial Probability Distribution}
-	
-	$P(n,k,p)=\frac{n!}{k!(n-k)!}p^k(1-p)^{(n-k)}$
 \end{multicols}
 
 \end{document}
