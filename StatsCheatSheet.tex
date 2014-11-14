@@ -59,7 +59,7 @@
 
 	Bernoulli distribution (a special case of binomial distribution) is a discrete probability distribution with two possible outcomes such that $X_i=0$ occurs with probability $p$ and $X_i=1$ with probability $q=(1-p)$. An example given in the course is a coin flip.
 	
-	$\mu=p$ $\sigma^2=p(1-p)$
+	$\mu=p$ \hspace{10 mm} $\sigma^2=p(1-p)$
 	
 
 	\textbf{Binomial Coefficient}
@@ -79,19 +79,17 @@
 	
 	\textbf{Confidence Interval}
 	
-	$CI=1.96\sqrt{\frac{p(1-p)}{N}}$
+	$CI=a\sqrt{\frac{p(1-p)}{N}} = a\sqrt{\frac{\sigma^2}{N}}$
 	
-	General Form:
-	
-	Size of CI = $a\sqrt{\frac{\sigma^2}{N}}$
-	
-	$\frac{1}{N}\sum X_i\pm a\sqrt{\frac{\sigma^2}{N}}$
-	
-	Note:
-	\begin{itemize}
-	    \item $a=1.96$ for $N\ge30$
-	    \item $a$ is the t-value computed for $(N-1)$ degrees of freedom and confidence level $p$.
-	\end{itemize}
+	$\mu \pm CI$
+
+	\begin{tabular}{ |c|c|c|c|c| }
+		\hline
+		confidence level & 90\% & 95\% & 98\% & 99\% \\
+		\hline
+		$a$ (for $N>30$) & 1.645 & 1.96 & 2.33 & 2.575 \\
+		\hline
+	\end{tabular}
 
 \columnbreak
 	
